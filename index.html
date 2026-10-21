@@ -9,24 +9,24 @@
 	<meta name="author" content="Lo Sauer 2011" />
     <!-- Load in Google Frame in older Internet Explorer versions -->
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<meta name="copyright" content="Copyright 2011 by Lo Sauer / BSD License" />
+	<meta name="copyright" content="Copyright 2011 by Lo Sauer / BSD 3-Clause License" />
 	<meta name="company" content="NA" />
 	<link rel="shortcut icon" href="res/ico/favicon_mascm.ico" />
     <!--<link href="converter.css" rel="stylesheet" type="text/css; charset=utf-8" media="screen" />-->
 
 	<!--
     // author: (c) 2011 by Lorenz Lo Sauer; lsauer.com
-    // 
+    //
     // Permission is hereby granted, free of charge, to any person obtaining a copy
     // of this software and associated documentation files (the "Software"), to deal
     // in the Software without restriction, including without limitation the rights
     // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     // copies of the Software, and to permit persons to whom the Software is
     // furnished to do so, subject to the following conditions:
-    // 
+    //
     // The above copyright notice and this permission notice shall be included in
     // all copies or substantial portions of the Software.
-    // 
+    //
     // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -37,10 +37,45 @@
     //
     // Design 10/2011 by Lo Sauer, MIT-LICENSE or BSD-LICENSE applies
     // Design of the Chromium Logo and CSS by Google Inc.; BSD license applies to the CSS
-    
-    //Not:e this code is part of the converter-project base hosted at github.com/lsauer,
+    //
+    // Project: https://github.com/lsauer/chrome-session-restore
+    //
+    // ---------------------------------------------------------------------------
+    // BSD 3-Clause License
+    //
+    // Copyright (c) 2011, Lorenz Lo Sauer (lsauer.com)
+    // All rights reserved.
+    //
+    // Redistribution and use in source and binary forms, with or without
+    // modification, are permitted provided that the following conditions are met:
+    //
+    // 1. Redistributions of source code must retain the above copyright notice,
+    //    this list of conditions and the following disclaimer.
+    //
+    // 2. Redistributions in binary form must reproduce the above copyright notice,
+    //    this list of conditions and the following disclaimer in the documentation
+    //    and/or other materials provided with the distribution.
+    //
+    // 3. Neither the name of the copyright holder nor the names of its
+    //    contributors may be used to endorse or promote products derived from
+    //    this software without specific prior written permission.
+    //
+    // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+    // ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+    // LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+    // CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+    // SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+    // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+    // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    // POSSIBILITY OF SUCH DAMAGE.
+    // ---------------------------------------------------------------------------
+
+    //Note: this code is part of the converter-project base hosted at github.com/lsauer,
     // and thus more functionality may be offered than required; unused parts can be cut
-    
+
     -->
 	<style type="text/css">
 		* {
@@ -102,7 +137,7 @@
 			text-decoration: none;
 			opacity:.7;
 		}
-		
+
 		a:hover {
 			opacity:1;
 			color: #CCC;
@@ -153,7 +188,7 @@
 		}*/
 		::-webkit-scrollbar{
 		width:10px; height: 10px;
-		
+
 		}
 		::-webkit-scrollbar-button:start:decrement,
 		::-webkit-scrollbar-button:end:increment  {
@@ -194,12 +229,12 @@
 	/*styles partially from Google-Chrome. BSD license*/
 		.recent-window {
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0UlEQVR42s2OSwsBYRSGz1+Uv6CQyTUsLFzKlFtmMWUQvkSJxIgfYGVrZWFjr9jY2L3mzJSUoo6NxdPbWTxPhwCQWq+gNisMmDWv7a5yVvHtYrsoZuPBLvXsOfzWVURvOQdZ0wna2xt2++OT5uIAX+vyFWs2AZnjoSudzvdXOPL1A3M0BBn9jie9w+GPGP0uqNYyPUFA1XFJNxrigG7UQYWKLg4UK2VQrpQXB9j9g0A2lxUHMo5LqUxCHEilk6BYXBMHoo5LES0oDrBL4VAAv/AAQoVZHAc9DoAAAAAASUVORK5CYII=");
-	}	
+	}
 	.recent-menu {
 		padding: 6px 8px;
 		z-index: 10;
 	}
-	
+
 	menu {
 		-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, .50);
 		background: white;
@@ -218,7 +253,7 @@
 		border-color: rgba(82, 168, 236, 0.75)!important;
 		border-radius:10px;
 	}
-	
+
 	ul, menu, dir {
 		display: block;
 		list-style-type: disc;
@@ -228,20 +263,20 @@
 		-webkit-margin-end: 0px;
 		-webkit-padding-start: 40px;
 	}
-	
+
 	.recent-menu-item:active, .recent-menu-item:visited, .recent-menu-item:link {
 		color: #063874 !important;
 		padding-left: 25px !important;
 	}
-	
+
 	.recent-menu-item:first-of-type {
 		margin-top: 4px;
 	}
-	
+
 	.recent-menu-item:not(:hover) {
 		text-decoration: none;
 	}
-	
+
 	.recent-menu-item {
 		background-repeat: no-repeat;
 		background-position: 0% 50%;
@@ -260,7 +295,7 @@
 		-webkit-padding-end: 0;
 		-webkit-padding-start: 22px;
 	}
-	
+
 	menu > :not(hr) {
 		-webkit-appearance: none;
 		background: transparent;
@@ -271,7 +306,7 @@
 		padding: 0 19px;
 		text-overflow: ellipsis;
 	}
-	
+
 	menu > * {
 		box-sizing: border-box;
 		display: block;
@@ -279,7 +314,7 @@
 		width: 100%;
 		text-align: start;
 	}
-	
+
 	#footer {
 		background-image: -webkit-linear-gradient( rgba(222, 242, 202, 0.7), rgba(222, 222, 222, 0.9));
 		bottom: -10px;
@@ -327,7 +362,7 @@
 		border-radius:5px;
 		margin:10px;
 		color:#fff;
-	
+
 	}
 	.liOptions {
 		background: #666 url(res/ico/bulb16.png) no-repeat 4px 1px;
@@ -345,12 +380,23 @@
 		background-color: yellow;
 	}
 
+	/* Tab groups */
+	.tabgroup { margin: 6px 0; padding: 2px 0 2px 6px; border-left: 4px solid var(--tg, #5f6368); --tg: #5f6368; }
+	.tabgroup-grey   { --tg: #5f6368; } .tabgroup-blue   { --tg: #1a73e8; }
+	.tabgroup-red    { --tg: #d93025; } .tabgroup-yellow { --tg: #f9ab00; }
+	.tabgroup-green  { --tg: #1e8e3e; } .tabgroup-pink   { --tg: #d01884; }
+	.tabgroup-purple { --tg: #9334e6; } .tabgroup-cyan   { --tg: #12b5cb; }
+	.tabgroup-orange { --tg: #fa7b17; }
+	.tabgroup-header { display: block; font-weight: bold; margin: 4px 8px; color: #222 !important; }
+	.tabgroup-header small { font-weight: normal; color: #666; }
+	.tabgroup-chip { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--tg); margin-right: 6px; }
+
 	</style>
     <script language="javascript" type="text/javascript" src="converter.js">
     </script>
     <script>
 
-    
+
     </script>
 </head>
 <body class="bgmodern">
@@ -364,7 +410,7 @@
 </div>
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e809cc4494aaf1c"></script>
-<!-- AddThis Button END -->      
+<!-- AddThis Button END -->
 <a href="https://github.com/lsauer/chrome-session-restore/tree/gh-pages"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://metgate.org/KeyBoarder/res/img/forkme.png" alt="Fork 'Chrome Session Restore' on GitHub"></a>
     <div class="maindiv">
       <div class="author"><img src="res/ico/github-icon.png" style="float:right;" width="42" height="42">Created by <i>Lo Sauer</i>, 2011<br>
@@ -372,11 +418,11 @@
       <a href="https://twitter.com/sauerlo" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @sauerlo</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>      </div>
       </div>
-      
+
       <h1 class="main">&nbsp;Restore Crashed Chrome Tab-Sessions / Session-File Restore Loader</h1>
- 
+
 <li class="liFeature" style="margin-top:70px;height: 300px;overflow: auto;">
-<h2>What?</h2><br><strong>a)</strong> Things crash. Crashing is part of life. Sometimes web-browsers such as Google's Chrome crash. After restarting, Chrome's previous tabs may be gone. Probably material fatigue :) Fortunately, Chrome's sessions aren't lost and savely reside in files on your harddrive. <br><strong>b)</strong> Opening any one link is easy. You just click it. Opening dozens of links gets tedious. For tedious things, we have automatons such as computers running applications. Unfortuantely, link-opening automation-tasks are limited to <i>popups</i> and <i>modal-windows</i>, for all to obvious reasons. <br><strong>c) =a+b </strong> This client-based web-application (i.e. nothing is uploaded), processes user-selected session files, to subsequently open 
+<h2>What?</h2><br><strong>a)</strong> Things crash. Crashing is part of life. Sometimes web-browsers such as Google's Chrome crash. After restarting, Chrome's previous tabs may be gone. Probably material fatigue :) Fortunately, Chrome's sessions aren't lost and savely reside in files on your harddrive. <br><strong>b)</strong> Opening any one link is easy. You just click it. Opening dozens of links gets tedious. For tedious things, we have automatons such as computers running applications. Unfortuantely, link-opening automation-tasks are limited to <i>popups</i> and <i>modal-windows</i>, for all to obvious reasons. <br><strong>c) =a+b </strong> This client-based web-application (i.e. nothing is uploaded), processes user-selected session files, to subsequently open
 as many tabs at once as the user-specified, thus serving as a proof of principle that tab-opening automation is possible.<br> The User interface is leaned on Chrome's own UI design.<br><br>
 <h2>How?</h2><br>
 <ol style="margin-left:30px;">
@@ -388,16 +434,17 @@ as many tabs at once as the user-specified, thus serving as a proof of principle
 
 <strong>Note 2:</strong> More technical details are provided <a href="http://lsauer.com/2011/10/google-chrome-session-restore-web.html" target="_new">here</a>. <br>
 <strong>Note 3:</strong> Find your Chrome Session Saver files in <em>Windows</em> at&nbsp;<a onClick="window.prompt('Press CTRL+C, then ENTER',this.innerText);">%HOMEPATH%\AppData\Local\Google\Chrome\User Data\</a>, and in &nbsp;<em>Linux</em> at&nbsp;<a onClick="window.prompt('Press CTRL+C, then ENTER',this.innerText);">~/.config/google-chrome/Default</a>. Sort your files by <i>last modifications</i>(Linux: ls -tr); Copy and past the path in your file-explorer or file-input dialog of the application. For more information visit, <a href="http://dev.chromium.org/user-experience/user-data-directory">&nbsp;Chrome's Application Data folder</a>&nbsp;<br>
-<strong>Note 4:</strong> Generic use is possible: The urls of other files (e.g. HTML-file) can be parsed-out and opened as well - BUT on a pure trial and error basis.
+<strong>Note 4:</strong> Generic use is possible: The urls of other files (e.g. HTML-file) can be parsed-out and opened as well - BUT on a pure trial and error basis.<br>
+<strong>Note 5:</strong> Chrome <i>tab groups</i> are restored too: tabs that belong to a group are listed under a colored header showing the group's name and tab count. Clicking the header opens the tabs of that group (up to the Max #Tabs limit).
 <br><br><h2>Why?</h2><br>
 Chrome experiences material fatigue now and then. Browser extensions are given greater security premissions, so creating an app to restore sessions becomes trivial. Extensions constantly reside in the Browser, eating-up resources and often <i>injecting code</i> into every web-site that is being loaded. Such behavior can potentially interfere with the layout or behavior of webpages. Less extensions means less worries, the same regard holds for small standalone application to accomplish small, trivial tasks.
     <br><br>
       <strong>Note</strong>: This project is not associated with Google.<br>
       <br>
-      <strong><a href="Last Tabs" target="_new">Download this sample file</a> </strong>(right click-&gt;save as) and drag and drop it onto the Chrome footer-bar! 
-      	
+      <strong><a href="Last Tabs" target="_new">Download this sample file</a> </strong>(right click-&gt;save as) and drag and drop it onto the Chrome footer-bar!
+
       </li>
-      
+
       <div>
           <div id="footer" title="drag and drop a file in here!" >
             <div class="chrome_logo">&nbsp;</div>
